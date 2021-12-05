@@ -1,0 +1,5 @@
+Django>=3.0
+azure-cognitiveservices-vision-customvision
+msrest
+keras
+matplotlib
