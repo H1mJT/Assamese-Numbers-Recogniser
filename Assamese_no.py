@@ -5,6 +5,11 @@ Created on Sun Dec  5 13:55:42 2021
 @author: Himjyoti
 """
 
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
 from msrest.authentication import ApiKeyCredentials
