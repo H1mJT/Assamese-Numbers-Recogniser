@@ -11,9 +11,8 @@ app = Flask(__name__)
 @app.route("/")
 
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
-from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateBatch, ImageFileCreateEntry, Region
 from msrest.authentication import ApiKeyCredentials
-import os, time, uuid
+import os
 import matplotlib.pyplot as plt
 from keras.preprocessing.image import load_img
 
