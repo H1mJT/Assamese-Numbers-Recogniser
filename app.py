@@ -100,4 +100,4 @@ def func():
             else:
                 break
         return "Image1: Prediction:",r,"Accuracy:",s,"Image2: Prediction:",q,"Accuracy:",w,"Image3: Prediction:",a,"Accuracy:",b
-     
+print(func())
