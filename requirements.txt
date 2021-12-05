@@ -3,3 +3,4 @@ azure-cognitiveservices-vision-customvision
 msrest
 keras
 matplotlib
+tensorflow
