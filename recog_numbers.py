@@ -41,4 +41,4 @@ def recog_numbers(image):
     return r
 
 #im=Image.open("test_image1.jpg")
-#print(detect_objects(im))
+#print(recog_numbers(im))
