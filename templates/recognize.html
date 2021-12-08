@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.png') }}">
+    <title>Assamese Number Recogniser</title>
+</head>
+<body>
+    <div>
+        <h1>Assamese Number Recogniser</h1>
+        
+    </div>
+    <div id="results-container">
+        <h2>Our Algorithm found:</h2>
+        <div id="results-col-wrapper">
+            <img class="results-col" src={{image}}></img>
+            <div class="results-col">
+                <div id="objects-list">
+                    <h3>Prediction:{{predictions}}</h3>
+                                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
