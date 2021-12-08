@@ -1,4 +1,3 @@
 Flask
-azure-cognitiveservices-vision-customvision
+azure.cognitiveservices.vision.customvision
 msrest
-
