@@ -42,8 +42,8 @@ def recognize():
             w="High probability!! Result"
             x="is most likely right."
         else: 
-            w="Low probability! Result is most likely wrong." 
-            x="Use a relevent, better quality image."
+            w="Low probability! Result may be wrong." 
+            x="Use a relevent better quality image."
         
         
 
