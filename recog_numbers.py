@@ -21,7 +21,7 @@ def recog_numbers(image):
     
     with open(os.path.join (base_image_location, 'tmp/' + image.filename), "rb") as image_contents:
         results = predictor.classify_image(
-            'e7ea3663-53a3-4644-b52a-1b271839d6dc', 'Iteration1', image_contents.read())
+            'e7ea3663-53a3-4644-b52a-1b271839d6dc', 'Iteration2', image_contents.read())
        
     
        
@@ -33,12 +33,13 @@ def recog_numbers(image):
             i=i+1
             if i==1:
                 r=prediction.tag_name
+                b=prediction.probability * 100
                 
                 
             else:
                 break
 
-    return r
+    return r,b
 
 #im=Image.open("test_image1.jpg")
-#print(recog_numbers(im))
+#print(detect_objects(im))
