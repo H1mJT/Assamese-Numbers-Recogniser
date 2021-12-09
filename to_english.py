@@ -17,4 +17,6 @@ def to_english(response):
     elif response=="৯": q=9
     else: q=0
     return q
+#i="১"
+#print(to_english(i))
 
