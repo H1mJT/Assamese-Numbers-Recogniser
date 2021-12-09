@@ -7,6 +7,7 @@ Created on Sun Dec  5 13:55:42 2021
 """
 
 
+
 from recog_numbers import recog_numbers
 from to_english import to_english
 import os
@@ -36,11 +37,15 @@ def recognize():
 
         response,b = recog_numbers(image)
         eng=to_english(response)
-        if b<55: 
-            response="Not Rcognisable"
-            eng="Not Rcognisable"
+        c=" {0:.2f}%".format(b)
+        if b>55: 
+            w="High probability!! Result"
+            x="is most likely right."
+        else: 
+            w="Low probability! Result is most likely wrong." 
+            x="Use a relevent, better quality image."
+        
         
 
 
-        return render_template('recognize.html', predictions=response, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
-
+        return render_template('recognize.html',warn=w,warn2=x, predictions=response,prob=c, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
