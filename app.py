@@ -6,7 +6,9 @@ Created on Sun Dec  5 13:55:42 2021
 @author: Himjyoti
 """
 
+
 from recog_numbers import recog_numbers
+from to_english import to_english
 import os
 from flask import Flask, render_template, request, url_for
 app = Flask(__name__)
@@ -27,11 +29,18 @@ def recognize():
         # Save image
         image_path = os.path.join('static', 'tmp', image.filename)
         image.seek(0)
-        image.save(image_path)        
+        try:
+            image.save(image_path)
+        except:
+            return render_template('index.html', res="Please Select an Image")
 
-        response = recog_numbers(image)
+        response,b = recog_numbers(image)
+        eng=to_english(response)
+        if b<55: 
+            response="Not Rcognisable"
+            eng="Not Rcognisable"
+        
 
 
-        return render_template('recognize.html', predictions=response, image=url_for('static', filename='tmp/' + image.filename))
-    else:
-        return render_template('index.html')
+        return render_template('recognize.html', predictions=response, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
+
