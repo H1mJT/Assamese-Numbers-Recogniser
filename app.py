@@ -38,7 +38,7 @@ def recognize():
         response,b = recog_numbers(image)
         eng=to_english(response)
         c=" {0:.2f}%".format(b)
-        if b>55: 
+        if b>45: 
             w="High probability!! Result"
             x="is most likely right."
         else: 
