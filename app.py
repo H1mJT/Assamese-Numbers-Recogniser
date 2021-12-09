@@ -7,7 +7,6 @@ Created on Sun Dec  5 13:55:42 2021
 """
 
 
-
 from recog_numbers import recog_numbers
 from to_english import to_english
 import os
@@ -34,16 +33,18 @@ def recognize():
             image.save(image_path)
         except:
             return render_template('index.html', res="Please Select an Image")
-
-        response,b = recog_numbers(image)
-        eng=to_english(response)
+        try:
+            response,b = recog_numbers(image)
+            eng=to_english(response)
+        except:
+            return render_template('index.html', res="Please Select a supported file type.")
         c=" {0:.2f}%".format(b)
-        if b>45: 
+        if b>55: 
             w="High probability!! Result"
             x="is most likely right."
         else: 
-            w="Low probability! Result may be wrong." 
-            x="Use a relevent better quality image."
+            w="Low probability! Result is most likely wrong." 
+            x="Use a relevent, better quality image."
         
         
 
