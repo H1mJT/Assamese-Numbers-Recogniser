@@ -40,8 +40,8 @@ def recognize():
             return render_template('index.html', res="Please Select a supported file type.")
         c=" {0:.2f}%".format(b)
         if b>55: 
-            w="High probability!!Result"
-            x="is most likely right."
+            w="High probability!!"
+            x="Result is most likely right."
         else: 
             w="Low probability! Result might be wrong!!" 
             x="Use a relevent, better quality image."
