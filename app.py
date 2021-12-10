@@ -38,8 +38,8 @@ def recognize():
             eng=to_english(response)
         except:
             return render_template('index.html', res="Please Select a supported file type.")
-        c=" {0:.2f}%".format(b)
-        if b>55: 
+        c=55
+        if b>c: 
             w="High probability!!"
             x="Result is most likely right."
         else: 
@@ -49,4 +49,4 @@ def recognize():
         
 
 
-        return render_template('recognize.html',warn=w,warn2=x, predictions=response,prob=c, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
+        return render_template('recognize.html',warn=w,warn2=x,c=c, predictions=response,prob=b, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
