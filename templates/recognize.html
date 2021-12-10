@@ -19,9 +19,14 @@
                 <div id="objects-list">
                     <span><h3>Prediction:{{predictions}}</h3></span>
                     <span><h3>In English:{{eng}}</h3></span>
-                    <span><center>Probability:{{prob}}</center></span>
-                    <span><center>{{warn}}</center></span>
-                    <span><center>{{warn2}}</center></span>            
+                    <span><h3>Probability:{{'%0.2f' | format(prob)}}</h3></span>
+                    {% if prob>c %}
+                        <span style="color:green">{{warn}}</span> 
+                        <span style="color:green">{{warn2}}</span>
+                    {% else %}
+                        <span style="color:red">{{warn}}</span> 
+                        <span style="color:red">{{warn2}}</span>
+                    {% endif %}            
                 </div>
             </div>
         </div>
