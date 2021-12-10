@@ -25,7 +25,7 @@ def recog_numbers(image):
        
     
        
-        print('Actual Number= ৬\nPrediction of Image1:')
+        
         i=0
         # Display the results.
         for prediction in results.predictions:
