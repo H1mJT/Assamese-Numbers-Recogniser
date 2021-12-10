@@ -17,16 +17,17 @@
             <img class="results-col" src={{image}}></img>
             <div class="results-col">
                 <div id="objects-list">
-                    <span><h3>Prediction:{{predictions}}</h3></span>
+                    <span><h4>Prediction:{{predictions}}</h4></span>
                     <span><h3>In English:{{eng}}</h3></span>
-                    <span><h3>Probability:{{'%0.2f' | format(prob)}}</h3></span>
                     {% if prob>c %}
+                        <span style="color:green"><h3>Probability:{{'%0.2f' | format(prob)}}</h3></span>
                         <span style="color:green">{{warn}}</span> 
                         <span style="color:green">{{warn2}}</span>
                     {% else %}
+                        <span style="color:red"><h3>Probability:{{'%0.2f' | format(prob)}}</h3></span>
                         <span style="color:red">{{warn}}</span> 
                         <span style="color:red">{{warn2}}</span>
-                    {% endif %}            
+                    {% endif %}         
                 </div>
             </div>
         </div>
