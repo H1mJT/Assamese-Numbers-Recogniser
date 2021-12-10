@@ -39,14 +39,5 @@ def recognize():
         except:
             return render_template('index.html', res="Please Select a supported file type.")
         c=55
-        if b>c: 
-            w="High probability!!"
-            x="Result is most likely right."
-        else: 
-            w="Low probability! Result might be wrong!!" 
-            x="Use a relevent, better quality image."
-        
-        
-
-
-        return render_template('recognize.html',warn=w,warn2=x,c=c, predictions=response,prob=b, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
+  
+        return render_template('recognize.html',c=c, predictions=response,prob=b, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
