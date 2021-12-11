@@ -41,3 +41,5 @@ def recognize():
         c=55
   
         return render_template('recognize.html',c=c, predictions=response,prob=b, eng=eng , image=url_for('static', filename='tmp/' + image.filename))
+    else:
+        return render_template('index.html')
